@@ -97,3 +97,16 @@ Assets/Plugins/Android/libs.meta
 # Ignore Unity build logs
 *.log
 
+# Ignore Oculus video files
+com.oculus.vrshell-20240819-180316.mp4
+com.oculus.vrshell-20240829-001817.mp4
+com.oculus.vrshell-20240829-002431.mp4
+com.oculus.vrshell-20240829-002755.mp4
+
+# Ignore server data file
+server.dat
+
+# Ignore Burst Debug Information folders
+testCharCust_BurstDebugInformation_DoNotShip/
+testgrab a_BurstDebugInformation_DoNotShip/
+testgrab_BurstDebugInformation_DoNotShip/
