@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44202876, g: 0.45022064, b: 0.47379425, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -670,6 +669,10 @@ PrefabInstance:
     - target: {fileID: 2859147190566827362, guid: b16424dcc3deba241b1457370a8e5b5e, type: 3}
       propertyPath: m_Name
       value: Dialog
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859147190566827362, guid: b16424dcc3deba241b1457370a8e5b5e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2859147191025677217, guid: b16424dcc3deba241b1457370a8e5b5e, type: 3}
       propertyPath: m_VideoClip
@@ -1866,6 +1869,18 @@ PrefabInstance:
     - target: {fileID: 5862023790738754040, guid: 5239d13158998b148b3e5a0c1de7c054, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8380477368060930786, guid: 5239d13158998b148b3e5a0c1de7c054, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.692122
+      objectReference: {fileID: 0}
+    - target: {fileID: 8380477368060930786, guid: 5239d13158998b148b3e5a0c1de7c054, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.72178054
+      objectReference: {fileID: 0}
+    - target: {fileID: 8380477368060930786, guid: 5239d13158998b148b3e5a0c1de7c054, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 92.403015
       objectReference: {fileID: 0}
     - target: {fileID: 8441890622583223835, guid: 5239d13158998b148b3e5a0c1de7c054, type: 3}
       propertyPath: m_SizeDelta.y

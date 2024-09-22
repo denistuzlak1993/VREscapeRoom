@@ -6,13 +6,14 @@ namespace TNet
     /// <summary>
     /// Instantiate the specified prefab at the game object's position.
     /// </summary>
-    public class TNAutoCreate : MonoBehaviour
-    {
-        /// <summary>
+ public class TNAutoCreate : MonoBehaviour
+{
+/// <summary>
         /// ID of the channel where the prefab should be created. '0' means "last used channel" (not recommended).
         /// </summary>
         public int channelID = 0;
         public static TNAutoCreate instance;
+
         /// <summary>
         /// Prefab to instantiate for player.
         /// </summary>
@@ -34,62 +35,58 @@ namespace TNet
         /// </summary>
         public bool isHostTest;
 
-        /// <summary>
-        /// Array of possible spawn positions
-        /// </summary>
-        public Transform[] spawnPositions;
-        private void Awake() {
-            instance = this;
-        }
-        IEnumerator Start()
+
+
+    IEnumerator Start()
+    {
+        if (channelID < 1) channelID = TNManager.lastChannelID;
+        while (TNManager.isJoiningChannel || !TNManager.IsInChannel(channelID)) yield return null;
+
+        if (isHostTest)
         {
-            if (channelID < 1) channelID = TNManager.lastChannelID;
-            while (TNManager.isJoiningChannel || !TNManager.IsInChannel(channelID)) yield return null;
-
-            // Učitaj sačuvani broj pozicije (default je 0)
-            int spawnIndex = PlayerPrefs.GetInt("SpawnPosition", 0);
-
-            // Osiguraj da indeks nije veći od broja dostupnih pozicija
-            if (spawnIndex < 0 || spawnIndex >= spawnPositions.Length)
-            {
-                Debug.LogError("Invalid spawn index! Defaulting to position 0.");
-                spawnIndex = 0;
-            }
-
-            // Dobij poziciju i rotaciju sa odgovarajuće spawn pozicije
-            Vector3 spawnPosition = spawnPositions[spawnIndex].position;
-            Quaternion spawnRotation = spawnPositions[spawnIndex].rotation;
-
-            if (isHostTest)
-            {
-                // Instantiate server-specific object (e.g., server camera)
-                TNManager.Instantiate(channelID, "CreateAtPosition", serverPrefabPath, persistent, Vector3.zero, Quaternion.identity);
-            }
-            else
-            {
-                CreateLocalPlayer(spawnPosition,spawnRotation);
+            // Instantiate server-specific object
+            TNManager.Instantiate(channelID, "CreateAtPosition", serverPrefabPath, persistent, Vector3.zero, Quaternion.identity);
+        }
+        else
+        {
+            // Instanciraj igrača na (0, 0, 0)
+            TNManager.Instantiate(channelID, "CreateAtPosition", prefabPath, persistent, Vector3.zero, Quaternion.identity);
             
-                     Destroy(gameObject);
-            }
+            // Pronađi instanciranog igrača
+            GameObject player = FindLocalPlayerInstance();
+            
+            // Postavi igrača na pravu poziciju iz VR trackinga
+            PositionPlayerAtRealLocation(player);
 
-           
-        }
-       public void CreateLocalPlayer (Vector3 spawnPosition, Quaternion spawnRotation)
-        {
-               TNManager.Instantiate(channelID, "CreateAtPosition", prefabPath, persistent, spawnPosition, spawnRotation);
-                Destroy(gameObject);
-        }
-        [RCC]
-        static GameObject CreateAtPosition(GameObject prefab, Vector3 pos, Quaternion rot)
-        {
-            // Instantiate the prefab
-            GameObject go = prefab.Instantiate();
-
-            // Set the position and rotation based on the passed values
-            Transform t = go.transform;
-            t.position = pos;
-            t.rotation = rot;
-            return go;
+            Destroy(gameObject); // Uništi ovaj objekat nakon instanciranja
         }
     }
+
+    private GameObject FindLocalPlayerInstance()
+    {
+        // Pretpostavka je da tvoj prefab ima određeni tag ili ime koje možeš pretražiti
+        return GameObject.FindWithTag("Player");
+    }
+
+    private void PositionPlayerAtRealLocation(GameObject player)
+    {
+        // Preuzmi realnu poziciju iz VR tracking sistema (npr. OVRManager)
+        Vector3 realPosition = Camera.main.transform.position; // Koristi poziciju kamere kao proxy za glavu
+        Quaternion realRotation = Camera.main.transform.rotation;
+
+        // Postavi instanciranog igrača na realnu poziciju
+        player.transform.position = realPosition;
+        player.transform.rotation = Quaternion.Euler(0, realRotation.eulerAngles.y, 0);  // Koristi samo Y rotaciju
+    }
+
+    [RCC]
+    static GameObject CreateAtPosition(GameObject prefab, Vector3 pos, Quaternion rot)
+    {
+        GameObject go = prefab.Instantiate();
+        go.transform.position = pos;
+        go.transform.rotation = rot;
+        return go;
+    }
+}
+
 }
