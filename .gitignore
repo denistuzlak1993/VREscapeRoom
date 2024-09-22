@@ -1,0 +1,112 @@
+# Ignore meta files for asset folder
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+[Tt]exturePacker/
+[Uu]ser[Ss]ettings/
+[Aa]ssets/AssetStoreTools*
+
+# Ignore auto-generated Visual Studio/MonoDevelop/JetBrains Rider files
+.vscode/
+.idea/
+*.csproj
+*.pidb
+*.sln
+*.suo
+*.user
+*.userprefs
+*.booproj
+*.svd
+*.pdb
+*.opendb
+*.VC.db
+*.pidb.meta
+
+# Ignore Unity asset files
+*.unitypackage
+*.prefab.meta
+*.mat.meta
+
+# Ignore build artifacts
+*.apk
+*.ipa
+*.exe
+*.app
+*.log
+*.dmg
+*.pkg
+*.msi
+*.jar
+*.map
+*.sym
+*.aab
+
+# Ignore crash reports
+CrashReports/
+
+# Ignore sensitive files
+*.p12
+*.key
+*.pem
+*.crt
+*.cert
+
+# Ignore environment-specific files
+*.DS_Store
+*.swp
+*.lock
+*.lock.meta
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+*.orig
+*.orig.meta
+
+# Ignore generated localization files
+Assets/I2/Localization/Resources/*
+!Assets/I2/Localization/Resources/Sources/*
+
+# Ignore plugin-specific files
+Plugins/Android/*.aar.meta
+Plugins/Android/libs/
+Plugins/Android/libs.meta
+
+# Ignore external dependencies like Firebase or other SDKs
+Assets/ExternalDependencyManager/
+Assets/ExternalDependencyManager.meta
+Assets/Plugins/Android/libs/
+Assets/Plugins/Android/libs.meta
+
+# Ignore the Git Large File Storage (LFS) cache
+.git/lfs/
+.git/lfs/objects/
+
+# Ignore any binary files (optional)
+*.dll
+*.exe
+*.so
+*.dylib
+*.class
+
+# Ignore Unity build logs
+*.log
+
+# Ignore Oculus video files
+com.oculus.vrshell-20240819-180316.mp4
+com.oculus.vrshell-20240829-001817.mp4
+com.oculus.vrshell-20240829-002431.mp4
+com.oculus.vrshell-20240829-002755.mp4
+
+# Ignore server data file
+server.dat
+
+# Ignore Burst Debug Information folders
+testCharCust_BurstDebugInformation_DoNotShip/
+testgrab a_BurstDebugInformation_DoNotShip/
+testgrab_BurstDebugInformation_DoNotShip/
