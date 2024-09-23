@@ -74,7 +74,6 @@ namespace LayerLab.GUIScripts
             if (defaultPanels.Count <= 0 || !_isReady) return;
 
 
-
         }
 
         //Click_Prev
