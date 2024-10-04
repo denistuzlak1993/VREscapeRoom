@@ -11,6 +11,10 @@ TagManager:
   - SamplesInfoPanel
   - ServerCamera
   - ServerPlayerCam
+  - Key
+  - Leg
+  - RotatedObject
+  - Candle
   layers:
   - Default
   - TransparentFX

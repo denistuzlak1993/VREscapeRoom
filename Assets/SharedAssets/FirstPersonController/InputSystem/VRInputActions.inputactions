@@ -1,0 +1,54 @@
+{
+    "name": "VRInputActions",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "40b288df-8818-414d-8947-5da972dd11b7",
+            "actions": [
+                {
+                    "name": "Move ",
+                    "type": "Value",
+                    "id": "3d6f7172-0bc5-4489-ab26-78b4d7d77d3f",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Rotate",
+                    "type": "Value",
+                    "id": "75073ec9-b88f-4c47-841c-78cefeaf1f02",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "0594c4d2-4681-4f5e-b08d-75ae0f1a883d",
+                    "path": "<OculusTouchController>{RightHand}/{Primary2DAxis}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move ",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "72794638-2ad1-436a-8b7e-985f75681424",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerRight>{LeftHand}/{Primary2DAxis}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
