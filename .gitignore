@@ -26,10 +26,6 @@
 *.VC.db
 *.pidb.meta
 
-# Ignore Unity asset files
-*.unitypackage
-*.prefab.meta
-*.mat.meta
 
 # Ignore build artifacts
 *.apk
