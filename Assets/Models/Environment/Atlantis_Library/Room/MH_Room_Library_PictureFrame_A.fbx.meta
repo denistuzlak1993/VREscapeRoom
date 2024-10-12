@@ -9,6 +9,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: A_1k
     second: {fileID: 2100000, guid: b81dc3a85cd8e8242828870829839620, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: T_Puzzle_Wooden_Props_1
+    second: {fileID: 2100000, guid: e30082d83a6fc0746972b8d43b297e02, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
