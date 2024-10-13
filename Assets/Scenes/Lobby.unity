@@ -9107,7 +9107,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8516575226736080105, guid: 38c92b8f61aa26b459c02b20d928ad10, type: 3}
   m_PrefabInstance: {fileID: 1662837986}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1662837987}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1da53d85f8b759d4d89055ee4e308a8c, type: 3}
@@ -10044,6 +10044,30 @@ MonoBehaviour:
   moveSpeed: 3
   rotateSpeed: 45
   vrCamera: {fileID: 2063295038}
+  moveAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Move
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 1ff11ebd-2ac2-45e0-921a-97f1380eded7
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  rotateAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Rotate
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: e40b366b-b776-4919-915d-9f4ef6301b36
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
 --- !u!1 &2052164323
 GameObject:
   m_ObjectHideFlags: 0
