@@ -7,6 +7,21 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_Tile_A
+    second: {fileID: 2100000, guid: d7f2e27c57fed8940ac3757674b88096, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Tile_B
+    second: {fileID: 2100000, guid: 2f926d69efc9ab646b4fd5b9211fcec1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Tile_C
+    second: {fileID: 2100000, guid: f78c278e0850cf5458ca27c1a00f8a12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Material.001
     second: {fileID: 2100000, guid: 651ed25c11562d3458171c4a068870ec, type: 2}
   materials:
